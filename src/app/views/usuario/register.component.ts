@@ -23,7 +23,7 @@ export class RegisterComponent {
     this.usuarioService.register(usuario).subscribe(
       () => {
         this.mensagem = 'Registro realizado com sucesso!';
-        this.router.navigate(['usuario/login']);  // Redireciona para a página de login
+        this.router.navigate(['usuario/login']);
       },
       (error) => {
         this.mensagem = 'Falha no registro. Tente novamente.';

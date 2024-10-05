@@ -17,7 +17,6 @@ export class TarefaListComponent implements OnInit {
     this.loadTarefas();
   }
 
-  // Método para carregar as tarefas
   loadTarefas(): void {
     this.tarefaController.getTarefas().subscribe(
       (tarefas: Tarefa[]) => {
@@ -29,9 +28,8 @@ export class TarefaListComponent implements OnInit {
     );
   }
 
-  // Criação de nova tarefa
   createTarefa(descricao: string): void {
-    if (!descricao.trim()) return; // Impede a criação de tarefas com descrição vazia
+    if (!descricao.trim()) return;
     const novaTarefa = new Tarefa(descricao, false);
     this.tarefaController.createTarefa(novaTarefa).subscribe(
       () => this.loadTarefas(),
@@ -39,18 +37,16 @@ export class TarefaListComponent implements OnInit {
     );
   }
 
-  // Atualiza a tarefa quando modificada no componente filho
   updateTarefa(tarefa: Tarefa): void {
-    console.log('ID enviado para atualização:', tarefa.id); // Verifique o ID no console
+    console.log('ID enviado para atualização:', tarefa.id);
     this.tarefaController.updateTarefa(tarefa.id!, tarefa).subscribe(
       () => this.loadTarefas(),
       (error) => {
-        console.error('Erro ao atualizar tarefa:', error); // Log completo do erro
+        console.error('Erro ao atualizar tarefa:', error);
       }
     );
   }
 
-  // Remove a tarefa
   deleteTarefa(tarefa: Tarefa): void {
     this.tarefaController.deleteTarefa(tarefa.id!).subscribe(
       () => this.loadTarefas(),

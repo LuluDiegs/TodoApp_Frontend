@@ -17,12 +17,12 @@ export class AlterarSenhaComponent {
     this.usuarioService.alterarSenha(this.senhaAntiga, this.novaSenha).subscribe(
       () => {
         this.mensagem = 'Senha alterada com sucesso!';
-        this.senhaAntiga = ''; // Limpa o campo após a alteração
+        this.senhaAntiga = '';
         this.novaSenha = '';
       },
       (error) => {
         this.mensagem = 'Erro ao alterar senha. Verifique os dados e tente novamente.';
-        console.error('Erro ao alterar senha:', error); // Log do erro para depuração
+        console.error('Erro ao alterar senha:', error);
       }
     );
   }

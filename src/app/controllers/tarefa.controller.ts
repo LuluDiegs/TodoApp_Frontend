@@ -7,7 +7,7 @@ import { Tarefa } from '../models/tarefa.model';
   providedIn: 'root',
 })
 export class TarefaController {
-  private apiURL = 'http://localhost:3000/api/tarefas';
+  private apiURL = 'https://apiluiza188543.onrender.com/api/tarefas';
 
   constructor(private http: HttpClient) { }
 

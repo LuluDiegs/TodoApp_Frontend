@@ -17,7 +17,7 @@ export class LoginComponent {
   login(): void {
     this.usuarioService.login(this.email, this.senha).subscribe(
       (res) => {
-        console.log('Token recebido após login:', res.token);  // Adicione isso para verificar o token
+        console.log('Token recebido após login:', res.token);
         localStorage.setItem('token', res.token);
         this.mensagem = 'Login realizado com sucesso!';
         this.router.navigate(['/tarefas']);

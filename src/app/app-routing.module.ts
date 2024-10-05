@@ -24,9 +24,8 @@ const routes: Routes = [
   },
   { path: 'recuperar-senha', component: RecuperarSenhaComponent },
   { path: 'resetar-senha', component: RedefinirSenhaComponent },
-  // Adicione a rota correta para 'forgot-password'
   { path: 'forgot-password', component: RecuperarSenhaComponent },
-  { path: '**', redirectTo: '/login' } // Rota para redirecionar para o login caso a rota não seja encontrada
+  { path: '**', redirectTo: '/login' }
 ];
 
 @NgModule({

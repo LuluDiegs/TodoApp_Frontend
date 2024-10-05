@@ -7,7 +7,7 @@ import { Tarefa } from '../models/tarefa.model';
   providedIn: 'root',
 })
 export class TarefaService {
-  private apiURL = 'http://localhost:3000/api/tarefas';
+  private apiURL = 'https://apiluiza188543.onrender.com/api/tarefas';
 
   constructor(private http: HttpClient) { }
 
@@ -27,17 +27,15 @@ export class TarefaService {
       throw new Error('ID da tarefa não pode ser nulo.');
     }
 
-    // Garantir que o valor de `concluida` seja booleano
     const tarefaAtualizada = {
       ...tarefa,
-      concluida: tarefa.concluida === true // Conversão para booleano
+      concluida: tarefa.concluida === true
     };
 
     return this.http.patch<Tarefa>(`${this.apiURL}/update/${id}`, tarefaAtualizada, {
       headers: this.createHeaders(),
     });
   }
-
 
   deleteTarefa(id: string | null): Observable<any> {
     return this.http.delete<any>(`${this.apiURL}/delete/${id}`, {

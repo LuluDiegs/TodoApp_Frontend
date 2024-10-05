@@ -36,7 +36,6 @@ html {
   padding: 12px;
   border-radius: 10px;
   background-color: #ac38b7;
-  /* Mantém a cor do botão */
   color: white;
   border: none;
   cursor: pointer;
@@ -48,7 +47,6 @@ html {
 
 .verificacao-container button:hover {
   background-color: #d281d1;
-  /* Cor de hover */
 }
 
 .sucesso {

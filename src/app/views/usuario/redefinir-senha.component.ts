@@ -14,7 +14,6 @@ export class RedefinirSenhaComponent {
   mensagem = '';
 
   constructor(private usuarioService: UsuarioService, private route: ActivatedRoute, private router: Router) {
-    // Captura o token diretamente dos parâmetros da URL
     this.token = this.route.snapshot.queryParams['token'] || '';
     if (!this.token) {
       this.mensagem = 'Token não fornecido ou inválido.';
@@ -40,7 +39,7 @@ export class RedefinirSenhaComponent {
     this.usuarioService.redefinirSenha(this.novaSenha, this.token).subscribe(
       () => {
         this.mensagem = 'Senha redefinida com sucesso!';
-        setTimeout(() => this.router.navigate(['/login']), 3000); // Redireciona para login após 3 segundos
+        setTimeout(() => this.router.navigate(['/login']));
       },
       (error) => {
         this.mensagem = 'Erro ao redefinir a senha. Tente novamente.';

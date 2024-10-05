@@ -9,8 +9,8 @@ import { UsuarioService } from '../../services/usuario.service';
 })
 export class VerificarEmailComponent implements OnInit {
   mensagem: string = '';
-  token: string | null = null; // Variável para armazenar o token da URL
-  verificado: boolean = false; // Para rastrear se a verificação foi concluída
+  token: string | null = null;
+  verificado: boolean = false;
 
   constructor(
     private usuarioService: UsuarioService,
@@ -30,12 +30,11 @@ export class VerificarEmailComponent implements OnInit {
 
   verificarEmail(): void {
     if (this.token) {
-      // Chama o serviço para verificar o e-mail com o token capturado
       this.usuarioService.verificarEmail(this.token).subscribe(
         (response) => {
           this.mensagem = 'E-mail verificado com sucesso! Redirecionando para a página de login...';
-          this.verificado = true; // Atualiza o status de verificação
-          setTimeout(() => this.router.navigate(['/login']), 3000); // Redireciona após 3 segundos
+          this.verificado = true;
+          setTimeout(() => this.router.navigate(['/login']));
         },
         (error) => {
           this.mensagem = 'Erro ao verificar e-mail. Tente novamente ou entre em contato com o suporte.';
