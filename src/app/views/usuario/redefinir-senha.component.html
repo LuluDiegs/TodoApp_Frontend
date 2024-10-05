@@ -1,0 +1,16 @@
+<div class="redefinir-senha-container">
+  <h2>Redefinir Senha</h2>
+  <div *ngIf="mensagem" class="mensagem">{{ mensagem }}</div>
+
+  <div class="input-group">
+    <input [(ngModel)]="novaSenha" placeholder="Nova Senha" type="password" class="input"
+      (keydown.enter)="redefinirSenha()" />
+  </div>
+
+  <div class="input-group">
+    <input [(ngModel)]="confirmarSenha" placeholder="Confirmar Senha" type="password" class="input"
+      (keydown.enter)="redefinirSenha()" />
+  </div>
+
+  <button (click)="redefinirSenha()" class="botao">Redefinir Senha</button>
+</div>

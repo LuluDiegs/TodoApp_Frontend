@@ -1,0 +1,18 @@
+<div class="recover-container">
+  <h2>Recuperar Senha</h2>
+  <!-- O atributo (ngSubmit) é usado no form para acionar a recuperação -->
+  <form (ngSubmit)="recuperarSenha()">
+    <!-- Campo de email para recuperação com o atributo name e keydown.enter -->
+    <input [(ngModel)]="email" name="email" placeholder="Digite seu Email" type="email" class="input" required
+      (keydown.enter)="recuperarSenha()" />
+
+    <!-- Botões lado a lado dentro de um contêiner flexível -->
+    <div class="button-group">
+      <button type="submit">Recuperar Senha</button>
+      <button type="button" routerLink="/home">Cancelar</button>
+    </div>
+
+    <!-- Mensagem de sucesso ou erro -->
+    <div *ngIf="mensagem" class="mensagem">{{ mensagem }}</div>
+  </form>
+</div>

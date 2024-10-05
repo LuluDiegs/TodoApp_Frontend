@@ -1,0 +1,20 @@
+<div class="main">
+  <h1>Lista de Tarefas</h1>
+
+  <div class="header-buttons">
+    <button routerLink="/settings" class="settings-button">Configurações</button>
+    <button (click)="logout()" class="logout-button">Logout</button>
+  </div>
+
+  <input type="text" #descricaoInput placeholder="Nova Tarefa"
+    (keydown.enter)="createTarefa(descricaoInput.value); descricaoInput.value=''" />
+
+  <button (click)="createTarefa(descricaoInput.value); descricaoInput.value=''" class="btn">Adicionar Tarefa</button>
+
+  <ul>
+    <li *ngFor="let tarefa of tarefas">
+      <app-item [tarefa]="tarefa" (removeTarefa)="deleteTarefa(tarefa)" (modificaTarefa)="updateTarefa($event)">
+      </app-item>
+    </li>
+  </ul>
+</div>

@@ -1,0 +1,7 @@
+<div>
+  <h2>Deletar Conta</h2>
+  <input [(ngModel)]="senha" placeholder="Senha" type="password" />
+  <input [(ngModel)]="confirmarSenha" placeholder="Confirmar Senha" type="password" />
+  <button (click)="deletarConta()">Deletar Conta</button>
+  <div *ngIf="mensagem">{{ mensagem }}</div>
+</div>

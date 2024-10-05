@@ -1,0 +1,7 @@
+<div>
+  <h2>Alterar Senha</h2>
+  <input [(ngModel)]="senhaAntiga" placeholder="Senha Antiga" type="password" (keydown.enter)="alterarSenha()" />
+  <input [(ngModel)]="novaSenha" placeholder="Nova Senha" type="password" (keydown.enter)="alterarSenha()" />
+  <button (click)="alterarSenha()">Alterar Senha</button>
+  <div *ngIf="mensagem">{{ mensagem }}</div>
+</div>

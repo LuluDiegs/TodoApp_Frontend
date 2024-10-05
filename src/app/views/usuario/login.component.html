@@ -1,0 +1,18 @@
+<div class="login-container">
+  <h2>Login</h2>
+  <form>
+    <input [(ngModel)]="email" name="email" placeholder="Email" class="lg-text-input" required
+      (keydown.enter)="login()" />
+    <input [(ngModel)]="senha" name="senha" placeholder="Senha" type="password" class="lg-text-input" required
+      (keydown.enter)="login()" />
+
+    <button type="button" class="btn-primary" (click)="login()">Login</button>
+
+    <div *ngIf="mensagem" class="alert">{{ mensagem }}</div>
+
+    <div class="button-group">
+      <button type="button" class="btn-secondary" routerLink="/register">Registrar-se</button>
+      <button type="button" class="btn-secondary" routerLink="/forgot-password">Esqueci a senha</button>
+    </div>
+  </form>
+</div>

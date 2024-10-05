@@ -1,0 +1,18 @@
+<div class="item">
+  <input [id]="tarefa.descricao" type="checkbox" [checked]="tarefa.concluida" (change)="toggleConcluida()" />
+  <label [for]="tarefa.descricao">{{ tarefa.descricao }}</label>
+
+  <div *ngIf="!emEdicao" class="btn-wrapper">
+    <button class="btn" (click)="emEdicao = true">Editar</button>
+    <button class="btn btn-warn" (click)="confirmRemove()">Remover</button>
+  </div>
+
+  <div *ngIf="emEdicao">
+    <input class="sm-text-input" #editedItem placeholder="Escreva o novo nome da tarefa aqui" [value]="tarefa.descricao"
+      (keydown.enter)="updateDescricao(editedItem.value)" />
+    <div class="btn-wrapper">
+      <button class="btn" (click)="emEdicao = false">Cancelar</button>
+      <button class="btn btn-save" (click)="updateDescricao(editedItem.value)">Salvar</button>
+    </div>
+  </div>
+</div>

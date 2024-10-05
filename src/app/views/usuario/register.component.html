@@ -1,0 +1,17 @@
+<div class="login-container">
+  <h2>Registrar</h2>
+  <form (ngSubmit)="register()">
+    <input type="text" [(ngModel)]="nome" name="nome" placeholder="Nome" required (keydown.enter)="register()" />
+    <input type="text" [(ngModel)]="sobrenome" name="sobrenome" placeholder="Sobrenome" required
+      (keydown.enter)="register()" />
+    <input type="email" [(ngModel)]="email" name="email" placeholder="Email" required (keydown.enter)="register()" />
+    <input type="password" [(ngModel)]="senha" name="senha" placeholder="Senha" required (keydown.enter)="register()" />
+
+    <div class="button-group">
+      <button type="submit">Registrar</button>
+      <button type="button" (click)="cancelar()">Cancelar</button>
+    </div>
+
+    <div *ngIf="mensagem" class="alert">{{ mensagem }}</div>
+  </form>
+</div>

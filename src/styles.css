@@ -1,61 +1,160 @@
 body {
-    font-family: Helvetica, Arial, sans-serif;
+  font-family: Helvetica, Arial, sans-serif;
+  background-color: #f9f9f9;
+  /* Fundo suave */
+  color: #333;
+  /* Cor do texto */
 }
 
-.btn-wrapper {
-    /* flexbox */
-    display: flex;
-    flex-wrap: nowrap;
-    justify-content: space-between;
+.main {
+  max-width: 600px;
+  /* Limitar largura */
+  margin: auto;
+  /* Centralizar */
+  padding: 20px;
+  /* Espaçamento interno */
+  background: #fff;
+  /* Fundo branco para destaque */
+  border-radius: 8px;
+  /* Bordas arredondadas */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  /* Sombra leve */
 }
+
+.input-wrapper {
+  margin-bottom: 1.5rem;
+  /* Espaço inferior entre inputs */
+}
+
+.lg-text-input {
+  width: 100%;
+  /* Largura total */
+  padding: 0.5rem;
+  /* Espaçamento interno */
+  margin-bottom: 1.5rem;
+  /* Espaço inferior entre as caixas */
+  border: 1px solid #ccc;
+  /* Borda padrão */
+  border-radius: 4px;
+  /* Bordas arredondadas */
+  box-sizing: border-box;
+  /* Inclui padding e borda no tamanho total */
+}
+
 
 .btn {
-    color: #000000;
-    background-color: #fff;
-    border: 2px solid #cecece;
-    padding: .35rem 1rem .25rem 1rem;
-    font-size: 1rem;
+  color: #000;
+  /* Cor do texto */
+  background-color: #fff;
+  /* Fundo branco */
+  border: 2px solid #cecece;
+  /* Borda cinza */
+  padding: .35rem 1rem .25rem;
+  /* Espaçamento interno */
+  font-size: 1rem;
+  /* Tamanho da fonte */
+  border-radius: 8px;
+  /* Bordas arredondadas */
+  cursor: pointer;
+  /* Cursor de mão ao passar o mouse */
 }
 
 .btn:hover {
-    background-color: #ecf2fd;
+  background-color: #ecf2fd;
+  /* Cor ao passar o mouse */
 }
 
 .btn:active {
-    background-color: #d1e0fe;
+  background-color: #d1e0fe;
+  /* Cor ao clicar */
 }
 
 .btn:focus {
-    outline: none;
-    border: black solid 2px;
+  outline: none;
+  /* Sem contorno padrão */
+  border: black solid 2px;
+  /* Contorno personalizado */
 }
 
-.btn-primary {
-    color: #ffffff;
-    background-color: #8f4ea8;
-    width: 100%;
-    padding: .75rem;
-    font-size: 1.3rem;
-    border: none;
-    margin: 1rem 0;
-    font-weight: bold;
-    border-radius: 8px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.password-input {
+  position: relative;
 }
 
-.btn-primary:hover {
-    background-color: #a762a7;
+.toggle-password {
+  position: absolute;
+  right: 10px;
+  /* Ajuste conforme necessário */
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  font-size: 1.2em;
+  /* Ajuste o tamanho do ícone */
 }
 
-.btn-primary:focus {
-    color: #000;
-    outline: none;
-    border: #000 solid 2px;
-    background-color: #d7ecff;
+.btn-primary,
+.btn-secondary {
+  color: #ffffff;
+  /* Cor do texto */
+  background-color: #8f4ea8;
+  /* Cor de fundo */
+  width: 100%;
+  /* Largura total */
+  padding: .75rem;
+  /* Espaçamento interno */
+  font-size: 1.3rem;
+  /* Tamanho da fonte */
+  border: none;
+  /* Sem borda */
+  margin: 1rem 0;
+  /* Margem vertical */
+  font-weight: bold;
+  /* Negrito */
+  border-radius: 8px;
+  /* Bordas arredondadas */
+  display: flex;
+  /* Flexbox */
+  justify-content: center;
+  /* Centralizar texto */
+  align-items: center;
+  /* Centralizar verticalmente */
 }
 
-.btn-primary:active {
-    background-color: #212020;
+.btn-primary:hover,
+.btn-secondary:hover {
+  background-color: #a762a7;
+  /* Cor ao passar o mouse */
+}
+
+.btn-primary:focus,
+.btn-secondary:focus {
+  color: #000;
+  /* Cor do texto ao focar */
+  outline: none;
+  /* Sem contorno padrão */
+  border: #000 solid 2px;
+  /* Contorno ao focar */
+  background-color: #d7ecff;
+  /* Cor de fundo ao focar */
+}
+
+.btn-primary:active,
+.btn-secondary:active {
+  background-color: #212020;
+  /* Cor ao clicar */
+}
+
+.alert {
+  color: #d9534f;
+  /* Cor de alerta */
+  margin: 10px 0;
+  /* Espaçamento */
+}
+
+.btn-wrapper {
+  display: flex;
+  /* Flexbox para botões */
+  justify-content: space-between;
+  /* Espaçamento entre botões */
+  margin-top: 1rem;
+  /* Margem superior */
 }

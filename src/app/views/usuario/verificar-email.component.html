@@ -1,0 +1,12 @@
+<div class="verificacao-container">
+  <h2>Verificação de E-mail</h2>
+  <p>{{ mensagem }}</p>
+
+  <!-- Exibir o botão de verificação apenas se o token estiver presente e não verificado -->
+  <button *ngIf="token && !verificado" (click)="verificarEmail()">Verificar E-mail</button>
+
+  <!-- Exibir uma mensagem de sucesso após a verificação -->
+  <div *ngIf="verificado" class="sucesso">
+    <p>E-mail verificado com sucesso! Redirecionando...</p>
+  </div>
+</div>
